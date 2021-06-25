@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Numbers</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+#score_container::after {content:"Score";}
+#timer_container::after {content:"Timer";}
+
+.counter {float:right; margin-left:5px;}
+#newgame_button {float:left;}
+
+#game_container > input {display:block; width:100%; font-size:40px; text-align:center; border-radius:5px; border:0px; margin-bottom:10px;}
+#question {background-color:#BBBBBB; color:#FFFFFF;}
+#answer {color:#444444; background-color:#FFFFFF;}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>Numbers</h1>
+</div>
+
+<div class="below_header">
+<button id="newgame_button" class="rectangle">New Game</button>
+<div id="timer_container" class="counter"></div>
+<div id="score_container" class="counter"></div>
+</div>
+
+<div id="game_container">
+<input id="question" disabled value="Remember this number.">
+<input id="answer" value="Enter your answer here.">
+<button id="submit_button" class="rectangle">Submit</button>
+</div>
+
+<table>
+<tr><td>Answer</td><td id="td1"></td></tr>
+<tr><td>Your Entry</td><td id="td2"></td></tr>
+</table>
+
+<h2>Directions</h2>
+<p>Press the start button to start the game. A number will be shown in the box. After a few seconds, the number will disappear. Enter the number or as much as you remember, and press the submit button or use the enter key on the keyboard. Change the difficulty by changing the speed or number of digits shown.</p>
+<h2>Settings</h2>
+
+<div class="add_subtract_setting">
+<p>Speed (lower is harder)</p>
+<button class="subtract_button" value="0">&lt;</button>
+<input id="speed" value="0" disabled>
+<button class="add_button" value="30">&gt;</button>
+</div>
+
+<div class="add_subtract_setting">
+<p>Number of Digits (more is harder)</p>
+<button class="subtract_button" value="1">&lt;</button>
+<input id="digits" value="7" disabled>
+<button class="add_button" value="15">&gt;</button>
+</div>
+
+</div>
+
+<script src="add_subtract_buttons.js"></script>
+<script src="score.js"></script>
+<script src="clocks.js"></script>
+
+<script>
+var answerBox = document.getElementById("answer");
+var questionBox = document.getElementById("question");
+var submitButton = document.getElementById("submit_button");
+var speed = document.getElementById("speed");
+var td1 = document.getElementById("td1");
+var td2 = document.getElementById("td2");
+var digits = document.getElementById("digits");
+
+var state = 0;
+
+var score = new counter(0, "score_container");
+
+var timerA = new timer("timer_container", 60);
+//timerA.check(true);
+
+submitButton.onclick = kogMaw;
+document.onkeydown = choGath;
+
+function checkKey(e)
+{
+  e = e || window.event;
+  return e.keyCode;
+}
+
+function choGath()
+{
+  var keyPress = checkKey();
+  if (e.keyCode == 13) {kogMaw();}
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+#score_container::after {content:"Score";}
+#life_container::after {content:"Lives";}
+
+.top_right_container {float:right; margin-top:17px; font-size:0px;}
+.top_right_container > * {margin-left:5px;}
+
+table {margin:auto; background-color:#888888; border-radius:8px; border-spacing:10px;}
+td {height:80px; width:80px; background-color:#AAAAAA; border-radius:3px; text-align:center; font-size:50px; color:#444444;}
+td.unselected {background-color:#AAAAAA;}
+td.selected {background-color:#DDDDDD;}
+td:hover {background-color:#FFFFFF;}
+
+.grid_container {position:relative;}
+#game_over {height:100%; width:100%; position:absolute; top:0px; display:none;}
+#game_over p {font-size:60px; font-weight:bold; text-align:center; color:#444444; margin:150px 0px 0px;}
+#try_again_button {margin:0px auto; display:block;}
+
+.below_game {margin:10px 0px;}
+.below_game::after {content:""; clear:both; display:block;}
+#stopwatch {font-size:14px; font-weight:bold; color:#AAAAAA; float:right;}

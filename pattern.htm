@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pattern</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="pattern.css">
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+<h1>Pattern</h1>
+<div class="top_right_container">
+<div id="life_container" class="counter"></div>
+<div id="score_container" class="counter"></div>
+</div>
+</div>
+
+<div class="below_header">
+<button id="restart_button" class="rectangle">New Game</button>
+</div>
+
+<div class="grid_container">
+<table>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<div id="game_over">
+<p>Game Over!</p>
+<button id="try_again_button" class="rectangle">Try Again</button>
+</div>
+</div>
+
+<div class="below_game">
+<div id="stopwatch"></div>
+</div>
+
+<h2>How to Play</h2>
+<p>Click on the squares in the same order as shown to win the game.</p>
+<h2>Difficulty</h2>
+
+<div class="add_subtract_setting">
+<p>Number of blocks that will be part of the pattern.</p>
+<button class="subtract_button" value="1">&lt;</button>
+<input id="difficulty" value="8" disabled>
+<button class="add_button" value="25">&gt;</button>
+</div>
+
+</div>
+
+<script src="add_subtract_buttons.js"></script>
+<script src="score.js"></script>
+<script src="clocks.js"></script>
+<script src="pattern.js"></script>
+
+</body>
+</html>
